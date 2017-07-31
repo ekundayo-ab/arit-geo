@@ -39,7 +39,24 @@ function aritGeo(seq){
 
 		} else if (seq[i+1] % seq[i] == 0) {
 
-			
+			// Test for geometric sequence
+			let geoCheck = [];
+
+			for (let i=0; i < seq.length; i++){
+				if (seq[i-1] == undefined || seq[i+1] == undefined) {
+					continue;
+				}
+				geoCheck.push(seq[i] / seq[i-1]);
+			}
+
+			let geoVar = "";
+			for (let i=0; i<geoCheck.length; i++){
+				 if (geoCheck[i] == geoCheck[0]){
+				 	return "Geometric";
+				 } else {
+				 	return -1
+				 }
+			}
 			
 		}
 
