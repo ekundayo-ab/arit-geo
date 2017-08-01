@@ -29,19 +29,19 @@ describe("aritGeo", function() {
 
 	describe("check if input type is a string", function(){
 		it("should return -1", function(){
-			assert.typeOf(aritGeo("a sequence"), "string");
+			assert.equal(aritGeo("a sequence"), -1);
 		});
 	});
 
 	describe("check if input type is a number", function(){
 		it("should return -1", function(){
-			assert.typeOf(aritGeo(1), "number");
+			assert.equal(aritGeo(1), -1);
 		});
 	});
 
-	describe("check if input is a special character", function(){
+	describe("check if input array contains constants with common differences", function(){
 		it("should return -1", function(){
-			assert.equal(aritGeo("$&^"), -1);
+			assert.equal(aritGeo([1,1,1,1,1,1,1]), -1);
 		});
 	});
 
@@ -53,13 +53,13 @@ describe("aritGeo", function() {
 
 	describe("check if no argument was supplied", function(){
 		it("should return -1", function(){
-			assert.equal(aritGeo(undefined), -1);
+			assert.equal(aritGeo(), -1);
 		});
 	});
 
-	describe("check if input is a special character", function(){
+	describe("check if array contains single element", function(){
 		it("should return -1", function(){
-			assert.equal(aritGeo(), -1);
+			assert.equal(aritGeo([1]), -1);
 		});
 	});
 
